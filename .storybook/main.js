@@ -5,11 +5,10 @@ module.exports = {
   ],
   "addons": [
     "@storybook/addon-links",
-    "@storybook/addon-essentials",
     "@storybook/preset-create-react-app",
-		"@storybook/addon-actions",
-		"@storybook/addon-viewport",
+    "@storybook/addon-actions",
 		"@storybook/addon-knobs",
+		"@storybook/addon-viewport",
     { name: "@storybook/addon-docs", options: { configureJSX: true } },
 		"@storybook/addon-a11y",
 		"@storybook/addon-storysource",
@@ -19,7 +18,18 @@ module.exports = {
 			test: /\.(ts|tsx)$/,
 			use: [
 				{
-					loader: require.resolve("react-docgen-typescript-loader"),
+          loader: require.resolve("react-docgen-typescript-loader"),
+          options: {
+						shouldExtractLiteralValuesFromEnum: true,
+						propFilter: (prop) => {
+							if (prop.parent) {
+								return !prop.parent.fileName.includes(
+									"node_modules"
+								);
+							}
+							return true;
+						},
+					},
 				},
 			],
 		});
