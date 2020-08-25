@@ -1,4 +1,9 @@
-import React, { useMemo, ButtonHTMLAttributes, PropsWithChildren } from "react";
+import React, { 
+  useMemo, 
+  ReactNode,
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+   PropsWithChildren } from "react";
 import styled from "styled-components";
 import { color, typography } from "../shared/styles";
 import { darken, rgba, opacify } from "polished";
@@ -56,6 +61,10 @@ const Loading = styled.span`
 	opacity: 0;
 `;
 
+export const btnPadding = {
+  medium: "13px 20px",
+  small: "8px 16px"
+}
 
 export interface CustormButtonProps {
   /** 是否禁用 */
@@ -420,7 +429,7 @@ const StyledButton = styled.button<ButtonProps>`
 `;
 
 
-function Button(props: PropsWithChildren<ButtonProps>) {
+export function Button(props: PropsWithChildren<ButtonProps>) {
   const { isLoading, loadingText, isLink, children } = props;
   const buttonInner = (
     <>
@@ -435,7 +444,7 @@ function Button(props: PropsWithChildren<ButtonProps>) {
   }, [isLink]);
 
   return (
-    <StyledButton  data-testid="button" as={btnType} {...props}>
+    <StyledButton data-testid="button" as={btnType} {...props}>
       {buttonInner}
     </StyledButton>
   );
