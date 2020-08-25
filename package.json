@@ -1,12 +1,15 @@
 {
-  "name": "lidy-new-ui-repo",
-  "version": "0.1.1",
+  "name": "@seeyuyu/lidy-new-ui-repo",
+  "version": "0.1.2",
   "private": false,
-  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "sideEffect":false,
   "dependencies": {
     "polished": "^3.6.5"
+  },
+  "repository":"https://github.com/seeyuyu/lidy-new-ui-repo",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/seeyuyu"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
