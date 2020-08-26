@@ -22,6 +22,7 @@
     "dist"
   ],
   "scripts": {
+    "np": "np",
     "postinstall": "patch-package",
     "start": "react-scripts start",
     "build": "tsc -p tsconfig.build.json",
