@@ -3,11 +3,12 @@
   "version": "0.1.2",
   "private": false,
   "types": "dist/index.d.ts",
-  "sideEffect":false,
+  "sideEffect": false,
   "dependencies": {
+    "coveralls": "^3.1.0",
     "polished": "^3.6.5"
   },
-  "repository":"https://github.com/seeyuyu/lidy-new-ui-repo",
+  "repository": "https://github.com/seeyuyu/lidy-new-ui-repo",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/seeyuyu"
   },
@@ -25,8 +26,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
-    "coverage": "react-scripts test --coverage --watchAll=false"
+    "build-storybook": "build-storybook --no-dll --quiet ",
+    "coverage": "react-scripts test --coverage --watchAll=false",
+    "coverall": "npm run coverage  && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,15 +46,6 @@
     ]
   },
   "devDependencies": {
-    "react-scripts": "3.4.3",
-    "typescript": "~3.7.2",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/user-event": "^7.1.2",
-    "@testing-library/react": "^10.4.8",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
     "@babel/core": "^7.11.1",
     "@storybook/addon-a11y": "^6.0.10",
     "@storybook/addon-actions": "^6.0.10",
@@ -64,10 +57,18 @@
     "@storybook/node-logger": "^6.0.10",
     "@storybook/preset-create-react-app": "^3.1.4",
     "@storybook/react": "^6.0.10",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^10.4.8",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
     "@types/styled-components": "^5.1.2",
     "babel-loader": "^8.1.0",
-    "react-is": "^16.13.1"
-    
+    "react-is": "^16.13.1",
+    "react-scripts": "3.4.3",
+    "typescript": "~3.7.2"
   },
   "jest": {
     "collectCoverageFrom": [

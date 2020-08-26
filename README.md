@@ -42,3 +42,14 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## 增加了coveralls
++  - name: Coveralls
++        env:
++          COVERALLS_SERVICE_NAME: 'GitHub CI'
++          COVERALLS_GIT_BRANCH: master
++          COVERALLS_REPO_TOKEN : ${{secrets.COVERALLS_REPO_TOKEN}}
++        run: |
++          npm run coverall
+
+[![Coverage Status](https://coveralls.io/repos/github/seeyuyu/lidy-new-ui-repo/badge.svg?branch=master)](https://coveralls.io/github/seeyuyu/lidy-new-ui-repo?branch=master)
