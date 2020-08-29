@@ -5,6 +5,7 @@
   "types": "dist/index.d.ts",
   "sideEffect": false,
   "dependencies": {
+    "axios": "^0.20.0",
     "coveralls": "^3.1.0",
     "patch-package": "^6.2.2",
     "polished": "^3.6.5",
